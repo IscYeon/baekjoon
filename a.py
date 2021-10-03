@@ -1,19 +1,40 @@
-num_qty = int(input())
-if num_qty <= 0 or num_qty > 1000000:
+'''
+subjectNum = int(input())
+if subjectNum > 1000:
     quit()
 
-num_list = list(input().split())
-for i in num_list:
-    if int(i) < -1000000 or int(i) > 1000000:
+scoreList = map(int, list(input().split()))
+scoreList = list(scoreList)
+for i in scoreList:
+    if i > 100 or i < 0:
         quit()
+if any(scoreList) == False or subjectNum != len(scoreList):
+    quit()
 
-max = -1000000
-min = 1000000
+maxScore = max(scoreList)
+sum = 0
+for i in scoreList:
+    newScore = i / maxScore * 100
+    sum += newScore
 
-if num_qty == len(num_list):
-    for i in num_list:
-        if int(i) > max:
-            max = int(i)
-        if int(i) < min:
-            min = int(i)
-    print(min, max)
+average = sum/len(scoreList)
+print(average)
+'''
+
+subjectNum = int(input())
+if subjectNum > 1000:
+    quit()
+
+scoreList = map(int, list(input().split()))
+scoreList = list(scoreList)
+for i in scoreList:
+    if i > 100 or i < 0:
+        quit()
+if any(scoreList) == False:
+    quit()
+
+maxScore = max(scoreList)
+for i in range(subjectNum):
+    scoreList[i] = scoreList[i] / maxScore * 100
+
+print(sum(scoreList)/subjectNum)
