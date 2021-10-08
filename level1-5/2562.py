@@ -1,0 +1,16 @@
+num_list = list()
+num_list.append(int(input()))
+num_list.append(int(input()))
+num_list.append(int(input()))
+num_list.append(int(input()))
+num_list.append(int(input()))
+num_list.append(int(input()))
+num_list.append(int(input()))
+num_list.append(int(input()))
+num_list.append(int(input()))
+
+num_max = max(num_list)
+num_maxIndex = num_list.index(num_max)
+
+print(num_max)
+print(num_maxIndex+1)
