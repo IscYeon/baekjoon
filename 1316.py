@@ -11,5 +11,6 @@ for i in range(test_case):
             groupWords -= 1
             break
         else:
-            check_words.append(words[j
+            check_words.append(words[j])
+
 print(groupWords)
